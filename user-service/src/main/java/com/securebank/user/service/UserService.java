@@ -8,6 +8,7 @@ import java.util.List;
 // DIP: Controller depends on this interface, not the implementation
 public interface UserService {
 
+  // services
   UserResponse registerUser(UserRegistrationRequest request);
 
   UserResponse getUserById(String id);
