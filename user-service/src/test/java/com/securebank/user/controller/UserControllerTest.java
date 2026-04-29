@@ -22,11 +22,13 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(UserController.class) // Loads only web layer — fast
 @Import(SecurityConfig.class) // Import your security config
 @DisplayName("UserController Tests")
+@ActiveProfiles("test")
 class UserControllerTest {
 
   @Autowired private MockMvc mockMvc;
