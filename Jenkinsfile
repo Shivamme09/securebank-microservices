@@ -80,13 +80,6 @@ pipeline {
                 sh 'mvn verify -DskipTests'
             }
         }
-        stage('Docker Build') {
-    steps {
-        echo '🐳 Building Docker image...'
-        sh 'docker compose build user-service'
-        echo '✅ Docker image built successfully!'
-    }
-}
     }
 
     // Runs after ALL stages complete — regardless of success or failure
