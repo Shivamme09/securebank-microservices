@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo '🔄 Checking out source code...'
                 checkout scm   // Checks out from the configured GitHub repo
-                echo "✅ Checked out branch: ${env.BRANCH_NAME}"
+                echo "✅ Checked out branch: ${env.GIT_BRANCH}"
             }
         }
 
