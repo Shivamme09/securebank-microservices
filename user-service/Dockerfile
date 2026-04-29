@@ -35,7 +35,5 @@ EXPOSE 8081
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
   CMD wget -q --spider http://localhost:8081/actuator/health || exit 1
 
-ENTRYPOINT ["java", \
-            "-Dspring.profiles.active=local", \
-            "-Djava.security.egd=file:/dev/./urandom", \
-            "-jar", "app.jar"]
+# ✅ This reads SPRING_PROFILES_ACTIVE from --env at runtime
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
